@@ -1,0 +1,22 @@
+{% extends "home/base.html" %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+<div class="text-center">
+    <h1>Bienvenido al Sistema de Eventos</h1>
+    <p class="lead">Gestión de entradas, usuarios y eventos en un solo lugar.</p>
+    {% if not user.is_authenticated %}
+      <a href="/login/" class="btn btn-primary">Iniciar sesión</a>
+      <a href="/register/" class="btn btn-success">Registrarse</a>
+    {% else %}
+      <a href="/protected/" class="btn btn-info">Ir a mi cuenta</a>
+    {% endif %}
+</div>
+
+<hr id="quienes">
+
+<section class="mt-5">
+    <h2>¿Quiénes somos?</h2>
+    <p>Somos un sistema innovador para la gestión de eventos, diseñado para
+       facilitar la compra de tickets, la organización de actividades y la administración de usuarios.</p>
+</section>
+{% endblock %}
